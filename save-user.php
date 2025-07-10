@@ -20,6 +20,7 @@
                 print"<script>alert('Erro ao cadastrar!');</script>";
                 print"<script>location.href='?page=new';</script>"; 
             }
+
             break;
         case 'edit':
             $nome = $_POST["nome"];
@@ -45,7 +46,22 @@
                 print"<script>alert('Erro ao editar!');</script>";
                 print"<script>location.href='?page=new';</script>"; 
             }
+
             break;
         case 'delete':
+
+            $sql = "DELETE FROM usuarios WHERE id=".$_REQUEST["id"];
+
+            $res = $conn->query($sql);
+
+            if($res==true){
+                print"<script>alert('Excluído com sucesso!');</script>";
+                print"<script>location.href='?page=list;</script>";
+            }
+            else{
+                print"<script>alert('Erro ao excluir!');</script>";
+                print"<script>location.href='?page=new';</script>"; 
+            }
+
             break;
     }
