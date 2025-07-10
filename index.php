@@ -38,14 +38,17 @@
             <?php
                 include("config.php");
                 switch(@$_REQUEST["page"]){
-                    case "new":
+                    case 'new':
                         include("new-user.php");
                     break;
-                    case "list":
+                    case 'list':
                         include("list-users.php");
                     break;
-                    case "save":
+                    case 'save':
                         include("save-user.php");
+                        break;
+                    case 'edit':
+                        include("edit-user.php");
                         break;
                     default:
                         print "<h1>Bem vindos!</h1>";
